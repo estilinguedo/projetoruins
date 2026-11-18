@@ -1,0 +1,38 @@
+﻿INSTALACAO NO CPANEL
+
+1. Faca uma copia de seguranca da pasta atual do site e do banco.
+2. Envie e extraia o conteudo deste ZIP na pasta do projeto. app, public,
+   vendor, storage e .htaccess devem ficar lado a lado. Nao extraia dentro
+   de outra pasta app ou public. Ative a exibicao de arquivos ocultos.
+   IMPORTANTE: em cPanel > Dominios, a raiz do documento deste subdominio
+   deve apontar para a pasta public do projeto. Assim /login.html e /api/session
+   funcionam diretamente no dominio, como no endereco informado.
+   Se o site atual ja abre /login.html com essa estrutura, mantenha essa raiz.
+3. Preserve a pasta storage que ja existe no servidor: ela pode conter fotos.
+   Este ZIP nao inclui fotos, sessoes, contas ou mensagens dos testes locais.
+4. Selecione PHP 8.3 no cPanel, com pdo_mysql, mbstring, fileinfo e openssl.
+5. O banco ja existente deve continuar sendo usado. NAO importe database.sql
+   novamente. Se ainda nao instalou as tabelas do Godot, importe somente
+   app/core/database/migrations/001-godot.sql no banco existente.
+6. A pasta storage precisa permitir escrita pelo PHP. Normalmente 755 ou 775,
+   conforme o servidor. Nao use 777.
+7. Abra o endereco informado abaixo e crie uma conta. O email chega ao
+   Mailtrap usado no teste local; confirme o link e teste o login.
+8. Teste tambem Esqueci minha senha. Se SMTP falhar, veja o error_log do projeto.
+
+ENDERECO CONFIGURADO
+https://projetob3.ifhost.gru.br
+
+CONFIGURACOES
+Banco e demais configuracoes: arquivo config.json enviado por voce.
+SMTP: mesmas configuracoes e credenciais que funcionaram no teste local.
+Links de email: endereco publico acima. Storage: caminho relativo ao projeto.
+Entrada pela raiz: redireciona para public/. Arquivos internos: acesso bloqueado.
+Os arquivos PHP, HTML, JS e CSS da aplicacao sao identicos aos testados localmente.
+Este pacote nao inclui iniciadores Windows nem banco local.
+
+LIMITES DA VALIDACAO
+Codigo PHP validado em PHP 8.3. Envio SMTP e fluxos de confirmacao, login,
+perfil e recuperacao foram testados no computador local. Nao houve teste
+direto no cPanel. Um eventual erro remoto ainda deve ser identificado no log;
+esta validacao nao comprova sozinha bloqueio de firewall ou SMTP na hospedagem.

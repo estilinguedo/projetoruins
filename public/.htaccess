@@ -1,3 +1,4 @@
+Require all granted
 Options -Indexes -MultiViews
 DirectoryIndex login.html
 <IfModule mod_headers.c>
