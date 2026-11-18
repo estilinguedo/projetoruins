@@ -11,8 +11,8 @@
     "port": 3306,
     "dbname": "administrador_plataforma_jogadores",
     "charset": "utf8mb4",
-    "user": "root",
-    "password": "senha"
+    "user": "administrador_muito_epico",
+    "password": "khazakstan_gozantess"
   },
   "security": {
     "password_pepper": "",
