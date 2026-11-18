@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Plataforma de Jogadores",
-    "url": "http://localhost/PlataformaJogadores",
+    "url": "https://projetob3.ifhost.gru.br",
     "env": "production",
     "timezone": "America/Sao_Paulo"
   },
