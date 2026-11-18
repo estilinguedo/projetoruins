@@ -1,0 +1,6 @@
+/* Ajustes funcionais: os arquivos de estilo do colega foram preservados. */
+[hidden] { display: none !important; }
+.texto-multilinha { white-space: pre-wrap; overflow-wrap: anywhere; }
+.site-main { max-width: 100%; }
+td { overflow-wrap: anywhere; }
+button:disabled { opacity: .6; cursor: wait; }

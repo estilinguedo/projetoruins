@@ -1,0 +1,43 @@
+{
+  "app": {
+    "name": "Plataforma de Jogadores",
+    "url": "http://localhost/PlataformaJogadores",
+    "env": "production",
+    "timezone": "America/Sao_Paulo"
+  },
+  "database": {
+    "driver": "mysql",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dbname": "plataforma_jogadores",
+    "charset": "utf8mb4",
+    "user": "root",
+    "password": "senha"
+  },
+  "security": {
+    "password_pepper": "",
+    "bcrypt_cost": 12,
+    "session_lifetime": 7200
+  },
+  "mail": {
+    "transport": "smtp",
+    "host": "sandbox.smtp.mailtrap.io",
+    "port": 2525,
+    "encryption": "tls",
+    "user": "",
+    "password": "",
+    "from_email": "nao-responda@plataforma.test",
+    "from_name": "Plataforma de Jogadores"
+  },
+  "storage": {
+    "path": "storage"
+  },
+  "limits": {
+    "description": 200,
+    "photo_bytes": 5242880,
+    "photo_pixels": 20000000
+  },
+  "game": {
+    "allow_local_http": false
+  }
+}

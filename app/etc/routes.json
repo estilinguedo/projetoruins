@@ -1,0 +1,90 @@
+{
+  "GET session": {
+    "action": "session",
+    "access": "public"
+  },
+  "POST login": {
+    "action": "login",
+    "access": "public"
+  },
+  "POST cadastro": {
+    "action": "register",
+    "access": "public"
+  },
+  "POST confirmar-email": {
+    "action": "confirm",
+    "access": "public"
+  },
+  "POST reenviar-confirmacao": {
+    "action": "resend",
+    "access": "public"
+  },
+  "POST recuperar-senha": {
+    "action": "forgot",
+    "access": "public"
+  },
+  "POST nova-senha": {
+    "action": "reset",
+    "access": "public"
+  },
+  "POST sair": {
+    "action": "logout",
+    "access": "user"
+  },
+  "GET leaderboard": {
+    "action": "leaderboard",
+    "access": "user"
+  },
+  "GET perfil": {
+    "action": "profile",
+    "access": "user"
+  },
+  "POST perfil/descricao": {
+    "action": "description",
+    "access": "user"
+  },
+  "POST perfil/foto": {
+    "action": "upload",
+    "access": "user"
+  },
+  "GET foto": {
+    "action": "photo",
+    "access": "user"
+  },
+  "GET moderacao": {
+    "action": "moderation",
+    "access": "moderator"
+  },
+  "GET moderacao/remover": {
+    "action": "preview",
+    "access": "moderator"
+  },
+  "POST moderacao/remover": {
+    "action": "remove",
+    "access": "moderator"
+  },
+  "GET moderacao/historico": {
+    "action": "history",
+    "access": "moderator"
+  },
+  "POST jogo/login": {
+    "controller": "game",
+    "action": "login",
+    "access": "public"
+  },
+  "GET jogo/me": {
+    "controller": "game",
+    "action": "me",
+    "access": "game"
+  },
+  "POST jogo/resultados": {
+    "controller": "game",
+    "action": "result",
+    "access": "game"
+  },
+  "POST jogo/logout": {
+    "controller": "game",
+    "action": "logout",
+    "access": "game"
+  }
+}

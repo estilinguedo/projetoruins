@@ -1,0 +1,217 @@
+/*
+ * PÁGINA: Confirmação da remoção de conteúdo
+ * ROTA: /moderacao/remover?id=...&tipo=...
+ * HTML/PHP: app/views/site/moderation-confirm.php
+ * SELETOR DA PÁGINA: .pagina-confirmar-remocao
+ * Este arquivo já está vinculado; escreva o CSS abaixo e atualize o navegador.
+ * Os estilos comuns ficam em ../geral.css.
+ */
+
+body {
+    background-color: #121214;
+    background-image: 
+        linear-gradient(45deg, #18181b 25%, transparent 25%, transparent 75%, #18181b 75%, #18181b),
+        linear-gradient(45deg, #18181b 25%, #121214 25%, #121214 75%, #18181b 75%, #18181b);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body > nav, 
+header, 
+div:first-of-type:not(form):not(.confirm-container) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+form, .confirm-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #1c1c21;
+    padding: 35px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 4px solid #b32424;
+    outline: 4px solid #121214;
+    box-shadow: 0 0 25px rgba(179, 36, 36, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: #b32424;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+p, span, blockquote {
+    color: #a0a5a8;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 10px auto 15px auto;
+    display: block;
+    width: 100%;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 160px;
+    height: auto;
+    border: 4px solid #00ff2b;
+    box-shadow: 0 0 15px rgba(0, 255, 43, 0.5);
+}
+
+body p:not([id]):not([class]), 
+form p:not([id]):not([class]),
+blockquote {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 3px 3px 0px #000000, -1px -1px 0px #000000, 1px -1px 0px #000000, -1px 1px 0px #000000;
+    padding: 10px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+label {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+    display: block;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    background-color: #0f0f12;
+    border: 3px solid #3a3d40;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 0;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #b32424;
+    box-shadow: 0 0 12px rgba(179, 36, 36, 0.6);
+}
+
+form button[type="submit"],
+form button,
+.btn-danger {
+    width: 100%;
+    background-color: #b32424;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    box-shadow: 4px 4px 0px #000000;
+    border-radius: 0;
+    display: block;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #8c1a1a;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+a, form a {
+    color: #00ff2b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+a:hover, form a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}
+
+body > span:last-of-type, .footer-text {
+    color: #a0a5a8;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 25px auto 0 auto;
+}
+
+body button:not(form button),
+body input[type="submit"]:not(form input),
+form[action*="logout"] button,
+form[action*="logout"] input,
+[class*="sair"],
+[value*="Sair"],
+[value*="SAIR"] {
+    background: none;
+    border: none;
+    color: #00ff2b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 12px auto; 
+    padding: 0;
+    text-align: center;
+    display: block; 
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    border-radius: 0;
+    opacity: 1;
+    clear: both;
+    transition: all 0.2s;
+}
+
+body button:not(form button):hover,
+[value*="Sair"]:hover,
+[value*="SAIR"]:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}

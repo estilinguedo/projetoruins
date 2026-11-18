@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Confirmar e-mail — Plataforma de Jogadores</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/geral.css">
+        <link rel="stylesheet" href="assets/css/paginas/confirmar-email.css">
+        <link rel="stylesheet" href="assets/css/compatibilidade.css">
+        <script defer src="assets/js/jquery.min.js"></script>
+        <script defer src="assets/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/js/app.js"></script>
+    </head>
+    <body class="pagina pagina-confirmar-email" data-pagina="confirmar-email">
+        <header class="site-header">
+            <p>
+                <a href="leaderboard.html">Plataforma de Jogadores</a>
+            </p>
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a data-guest href="login.html" hidden>Entrar</a>
+                <a data-guest href="cadastro.html" hidden>Criar conta</a>
+                <a data-user href="leaderboard.html" hidden>Leaderboard</a>
+                <a data-user href="perfil.html" hidden>Meu perfil</a>
+                <a data-moderator href="moderacao.html" hidden>Moderação</a>
+                <a data-moderator href="historico.html" hidden>Histórico</a>
+                <form id="logout-form" data-user hidden>
+                    <button type="submit">Sair</button>
+                </form>
+            </nav>
+        </header>
+        <main id="conteudo" class="site-main">
+            <h1>Confirmar e-mail</h1>
+            <p id="message" class="alert" role="status" aria-live="polite" tabindex="-1" hidden></p>
+            <p id="loading" role="status">Carregando…</p>
+            <div id="page-content" hidden>
+                <p>Confirme abaixo para ativar sua conta.</p>
+                <form id="main-form" data-endpoint="confirmar-email">
+                    <input type="hidden" name="token">
+                    <button type="submit">Confirmar meu e-mail</button>
+                </form>
+                <p>
+                    <a href="reenviar-confirmacao.html">Solicitar outro link</a>
+                </p>
+            </div>
+            <noscript>Ative o JavaScript para utilizar o site.</noscript>
+        </main>
+        <footer class="site-footer">
+            <p>Plataforma de Jogadores</p>
+        </footer>
+    </body>
+</html>

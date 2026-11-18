@@ -1,0 +1,254 @@
+/*
+ * PÁGINA: Lista de perfis para moderação
+ * ROTA: /moderacao
+ * HTML/PHP: app/views/site/moderation.php
+ * SELETOR DA PÁGINA: .pagina-moderacao
+ * Este arquivo já está vinculado; escreva o CSS abaixo e atualize o navegador.
+ * Os estilos comuns ficam em ../geral.css.
+ */
+
+body {
+    background-color: #121214;
+    background-image: 
+        linear-gradient(45deg, #18181b 25%, transparent 25%, transparent 75%, #18181b 75%, #18181b),
+        linear-gradient(45deg, #18181b 25%, #121214 25%, #121214 75%, #18181b 75%, #18181b);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+form {
+    width: 100%;
+    max-width: 420px;
+    background-color: #1c1c21;
+    padding: 35px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 4px solid #b32424;
+    outline: 4px solid #121214;
+    box-shadow: 0 0 25px rgba(179, 36, 36, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #b32424;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+caption {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: none;
+    margin-bottom: 15px;
+    display: table-caption;
+    width: 100%;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+body > p {
+    color: #a0a5a8;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+label {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+input, input[id="busca"] {
+    width: 100%; 
+    background-color: #0f0f12;
+    border: 3px solid #3a3d40;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 0;
+    margin: 0 auto 15px auto;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ff2b;
+    box-shadow: 0 0 12px rgba(0, 255, 43, 0.7);
+}
+
+form button[type="submit"] {
+    width: 100%;
+    background-color: #b32424;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 4px 4px 0px #000000;
+    border-radius: 0;
+    display: block;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #8c1a1a;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+form button[type="submit"]:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1c1c21;
+    margin: 30px auto 15px auto;
+    border: 4px solid #b32424; 
+    outline: 4px solid #121214;
+    box-shadow: 0 0 25px rgba(179, 36, 36, 0.4);
+    border-collapse: collapse;
+}
+
+th {
+    color: #b32424;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    border-bottom: 3px solid #3a3d40;
+    text-align: center;
+}
+
+td {
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 2px solid #121214;
+    vertical-align: middle;
+}
+
+tr:hover td {
+    background-color: #0f0f12;
+    color: #00ff2b;
+    transition: background-color 0.2s;
+}
+
+a {
+    color: #00ff2b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}
+
+nav[aria-label="Páginas de perfis"], 
+.pagination,
+footer {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+nav[aria-label="Páginas de perfis"] span {
+    color: #a0a5a8;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0;
+}
+
+nav[aria-label="Páginas de perfis"] a {
+    display: inline-block;
+    margin: 0;
+}
+
+body > span, .footer-text {
+    color: #a0a5a8;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Botão Sair Global Extremo */
+body > button, 
+body > form + button,
+input[type="submit"]:not(form input),
+button:not(form button) {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #00ff2b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 6px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    border-radius: 0;
+    opacity: 0.8;
+}
+
+body > button:hover,
+button:not(form button):hover {
+    color: #ffffff;
+    text-shadow: 0 0 6px #00ff2b;
+    opacity: 1;
+}

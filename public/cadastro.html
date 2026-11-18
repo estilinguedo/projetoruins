@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Criar conta — Plataforma de Jogadores</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/geral.css">
+        <link rel="stylesheet" href="assets/css/paginas/cadastro.css">
+        <link rel="stylesheet" href="assets/css/compatibilidade.css">
+        <script defer src="assets/js/jquery.min.js"></script>
+        <script defer src="assets/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/js/app.js"></script>
+    </head>
+    <body class="pagina pagina-cadastro" data-pagina="cadastro">
+        <header class="site-header">
+            <p>
+                <a href="leaderboard.html">Plataforma de Jogadores</a>
+            </p>
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a data-guest href="login.html" hidden>Entrar</a>
+                <a data-guest href="cadastro.html" hidden>Criar conta</a>
+                <a data-user href="leaderboard.html" hidden>Leaderboard</a>
+                <a data-user href="perfil.html" hidden>Meu perfil</a>
+                <a data-moderator href="moderacao.html" hidden>Moderação</a>
+                <a data-moderator href="historico.html" hidden>Histórico</a>
+                <form id="logout-form" data-user hidden>
+                    <button type="submit">Sair</button>
+                </form>
+            </nav>
+        </header>
+        <main id="conteudo" class="site-main">
+            <h1>Criar conta</h1>
+            <p id="message" class="alert" role="status" aria-live="polite" tabindex="-1" hidden></p>
+            <p id="loading" role="status">Carregando…</p>
+            <div id="page-content" hidden>
+                <p>Após o cadastro, confirme seu e-mail para poder entrar.</p>
+                <form id="main-form" data-endpoint="cadastro">
+                    <p>
+                        <label for="nomeUsuario">Nome de usuário</label>
+                        <br>
+                        <input
+                            id="nomeUsuario"
+                            name="nomeUsuario"
+                            minlength="3"
+                            maxlength="30"
+                            pattern="[A-Za-z0-9_]{3,30}"
+                            autocomplete="username"
+                            aria-describedby="nome-ajuda"
+                            required
+                        >
+                        <br>
+                        <small id="nome-ajuda">De 3 a 30 letras, números ou sublinhados.</small>
+                    </p>
+                    <p>
+                        <label for="email">E-mail</label>
+                        <br>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            maxlength="190"
+                            autocomplete="email"
+                            required
+                        >
+                    </p>
+                    <p>
+                        <label for="senha">Senha</label>
+                        <br>
+                        <input
+                            id="senha"
+                            name="senha"
+                            type="password"
+                            minlength="8"
+                            maxlength="128"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <br>
+                        <small>De 8 a 128 caracteres.</small>
+                    </p>
+                    <p>
+                        <label for="confirmacao">Confirme a senha</label>
+                        <br>
+                        <input
+                            id="confirmacao"
+                            name="confirmacao"
+                            type="password"
+                            minlength="8"
+                            maxlength="128"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </p>
+                    <button type="submit">Criar conta</button>
+                </form>
+            </div>
+            <noscript>Ative o JavaScript para utilizar o site.</noscript>
+        </main>
+        <footer class="site-footer">
+            <p>Plataforma de Jogadores</p>
+        </footer>
+    </body>
+</html>

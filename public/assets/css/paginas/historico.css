@@ -1,0 +1,172 @@
+/*
+ * PÁGINA: Histórico de moderação
+ * ROTA: /moderacao/historico
+ * HTML/PHP: app/views/site/history.php
+ * SELETOR DA PÁGINA: .pagina-historico
+ * Este arquivo já está vinculado; escreva o CSS abaixo e atualize o navegador.
+ * Os estilos comuns ficam em ../geral.css.
+ */
+
+body {
+    background-color: #121214;
+    background-image: 
+        linear-gradient(45deg, #18181b 25%, transparent 25%, transparent 75%, #18181b 75%, #18181b),
+        linear-gradient(45deg, #18181b 25%, #121214 25%, #121214 75%, #18181b 75%, #18181b);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body > nav, 
+header, 
+div:first-of-type:not(main) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+main, .history-container, div[class*="content"] {
+    width: 100%;
+    max-width: 840px;
+    background-color: #1c1c21;
+    padding: 35px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 4px solid #ff6a00; 
+    outline: 4px solid #121214;
+    box-shadow: 0 0 25px rgba(255, 106, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #ff6a00;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+caption, h2 {
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin: 15px auto;
+    box-sizing: border-box;
+}
+
+th {
+    color: #ff6a00;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+a {
+    color: #00ff2b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}
+
+nav[aria-label*="Página"], .pagination {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+nav span, .pagination span {
+    color: #a0a5a8;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+body > span, .footer-text {
+    color: #a0a5a8;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 25px auto 0 auto;
+}
+
+button, 
+input[type="button"], 
+input[type="submit"],
+a[href*="logout"],
+[class*="sair"] {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #00ff2b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto; 
+    text-align: center;
+    display: block; 
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    border-radius: 0;
+    opacity: 1;
+    clear: both;
+    transition: all 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+a[href*="logout"]:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}

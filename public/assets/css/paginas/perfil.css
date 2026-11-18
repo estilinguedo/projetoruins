@@ -1,0 +1,195 @@
+/*
+ * PÁGINA: Meu perfil e perfil de outro jogador
+ * ROTA: /perfil ou /perfil?id=...
+ * HTML/PHP: app/views/site/profile.php
+ * SELETOR DA PÁGINA: .pagina-perfil
+ * Este arquivo já está vinculado; escreva o CSS abaixo e atualize o navegador.
+ * Os estilos comuns ficam em ../geral.css.
+ */
+
+body {
+    background-color: #121214;
+    background-image: 
+        linear-gradient(45deg, #18181b 25%, transparent 25%, transparent 75%, #18181b 75%, #18181b),
+        linear-gradient(45deg, #18181b 25%, #121214 25%, #121214 75%, #18181b 75%, #18181b);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    max-width: 420px;
+    background-color: #1c1c21;
+    padding: 35px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 4px solid #ff6a00;
+    outline: 4px solid #121214;
+    box-shadow: 0 0 25px rgba(255, 106, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: #ff6a00;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+p {
+    color: #a0a5a8;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 0 25px 0;
+    line-height: 1.5;
+}
+
+label {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 8px;
+    margin-top: 12px;
+    display: block;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+img {
+    width: 130px;
+    height: 130px;
+    border: 4px solid #00ff2b;
+    box-shadow: 0 0 15px rgba(0, 255, 43, 0.5);
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    background-color: #0f0f12;
+    border: 3px solid #3a3d40;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #00ff2b;
+    box-shadow: 0 0 12px rgba(0, 255, 43, 0.7);
+}
+
+input[type="file"] {
+    width: 100%;
+    background-color: #0f0f12;
+    border: 3px dashed #3a3d40;
+    padding: 10px;
+    color: #a0a5a8;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+form button, 
+form input[type="submit"] {
+    width: 100%;
+    background-color: #ff6a00;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 0px #000000;
+    display: block;
+    border-radius: 0;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+form button:hover, 
+form input[type="submit"]:hover {
+    background-color: #e64a19;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+form button:active, 
+form input[type="submit"]:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+a {
+    color: #00ff2b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}
+
+body > button, 
+body > input[type="submit"],
+body > input[type="button"] {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #00ff2b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    outline: none;
+    transition: all 0.2s;
+}
+
+body > button:hover, 
+body > input[type="submit"]:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff2b;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Perfil — Plataforma de Jogadores</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/geral.css">
+        <link rel="stylesheet" href="assets/css/paginas/perfil.css">
+        <link rel="stylesheet" href="assets/css/compatibilidade.css">
+        <script defer src="assets/js/jquery.min.js"></script>
+        <script defer src="assets/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/js/app.js"></script>
+    </head>
+    <body class="pagina pagina-perfil" data-pagina="perfil">
+        <header class="site-header">
+            <p>
+                <a href="leaderboard.html">Plataforma de Jogadores</a>
+            </p>
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a data-guest href="login.html" hidden>Entrar</a>
+                <a data-guest href="cadastro.html" hidden>Criar conta</a>
+                <a data-user href="leaderboard.html" hidden>Leaderboard</a>
+                <a data-user href="perfil.html" hidden>Meu perfil</a>
+                <a data-moderator href="moderacao.html" hidden>Moderação</a>
+                <a data-moderator href="historico.html" hidden>Histórico</a>
+                <form id="logout-form" data-user hidden>
+                    <button type="submit">Sair</button>
+                </form>
+            </nav>
+        </header>
+        <main id="conteudo" class="site-main">
+            <h1>Perfil</h1>
+            <p id="message" class="alert" role="status" aria-live="polite" tabindex="-1" hidden></p>
+            <p id="loading" role="status">Carregando…</p>
+            <div id="page-content" hidden>
+                <section aria-label="Informações do jogador">
+                    <img id="profile-photo" alt="Foto de perfil" width="160" height="160" hidden>
+                    <p id="no-photo">Sem foto de perfil.</p>
+                    <p id="profile-description" class="texto-multilinha"></p>
+                    <p id="profile-ranking"></p>
+                </section>
+                <section id="own-description" aria-labelledby="editar-descricao" hidden>
+                    <h2 id="editar-descricao">Minha descrição</h2>
+                    <form id="description-form" data-endpoint="perfil/descricao">
+                        <p>
+                            <label for="descricao">Descrição (até 200 caracteres)</label>
+                            <br>
+                            <textarea id="descricao" name="descricao" rows="4" cols="30" maxlength="200"></textarea>
+                        </p>
+                        <p>Deixe o campo vazio e salve para remover sua descrição.</p>
+                        <button type="submit">Salvar descrição</button>
+                    </form>
+                </section>
+                <section id="own-photo" aria-labelledby="foto-perfil" hidden>
+                    <h2 id="foto-perfil">Minha foto</h2>
+                    <form id="photo-form">
+                        <p>
+                            <label for="foto">Foto de perfil</label>
+                            <br>
+                            <input
+                                id="foto"
+                                name="foto"
+                                type="file"
+                                accept="image/png,image/jpeg"
+                                required
+                                aria-describedby="foto-ajuda"
+                            >
+                        </p>
+                        <p id="foto-ajuda">PNG ou JPEG de até 5 MB e 20 milhões de pixels. Não é possível substituir uma foto enquanto ela estiver no perfil.</p>
+                        <button type="submit">Enviar foto</button>
+                    </form>
+                    <p id="photo-exists" hidden>Você já possui uma foto. Se ela for removida pela moderação, será possível enviar outra.</p>
+                </section>
+                <section id="moderate-profile" aria-labelledby="acoes-moderacao" hidden>
+                    <h2 id="acoes-moderacao">Moderar este perfil</h2>
+                    <p id="remove-photo" hidden>
+                        <a>Remover foto</a>
+                    </p>
+                    <p id="remove-description" hidden>
+                        <a>Remover descrição</a>
+                    </p>
+                </section>
+            </div>
+            <noscript>Ative o JavaScript para utilizar o site.</noscript>
+        </main>
+        <footer class="site-footer">
+            <p>Plataforma de Jogadores</p>
+        </footer>
+    </body>
+</html>
