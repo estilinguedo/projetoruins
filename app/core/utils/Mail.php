@@ -5,8 +5,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 final class Mail {
     public static function isSandbox(): bool {
-        return Config::get('mail.transport')==='smtp'
-            && strtolower((string)Config::get('mail.host'))==='sandbox.smtp.mailtrap.io';
+        return Config::get('mail.transport') === 'mailtrap_api'
+            || (Config::get('mail.transport')==='smtp'
+            && strtolower((string)Config::get('mail.host'))==='sandbox.smtp.mailtrap.io');
     }
 
     public static function accountLink(string $to,string $type,string $token): void {
@@ -17,6 +18,10 @@ final class Mail {
         $validity=$activation ? '24 horas' : '1 hora';
         $url=Web::url(($activation?'confirmar-email.html':'nova-senha.html').'?token='.$token);
         $body=$subject."\n\nAcesse: ".$url."\n\nValidade: ".$validity.".\nSe você não fez esta solicitação, ignore esta mensagem.";
+        if (Config::get('mail.transport') === 'mailtrap_api') {
+            MailtrapApi::send($to, $subject, $body);
+            return;
+        }
         if(Config::get('mail.transport')==='log') {
             if(Config::get('app.env')!=='development') throw new \RuntimeException('E-mail de teste não permitido neste ambiente.');
             $file=Web::storage('mail').'/'.gmdate('Ymd-His').'-'.bin2hex(random_bytes(8)).'.json';

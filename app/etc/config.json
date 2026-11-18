@@ -20,14 +20,16 @@
     "session_lifetime": 7200
   },
   "mail": {
-    "transport": "smtp",
+    "transport": "mailtrap_api",
     "host": "sandbox.smtp.mailtrap.io",
     "port": 2525,
     "encryption": "tls",
     "user": "c9039188143fdf",
     "password": "90b5fb38fc2f9a",
     "from_email": "nao-responda@plataforma.test",
-    "from_name": "Plataforma de Jogadores"
+    "from_name": "Plataforma de Jogadores",
+    "api_token": "ebc0bd833566117f104c48bd2b81be54",
+    "inbox_id": 4435467
   },
   "storage": {
     "path": "storage"

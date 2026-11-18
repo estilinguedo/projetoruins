@@ -18,14 +18,14 @@ final class ApiController {
     public function register(): array {
         $this->limit('cadastro',5);$email=strtolower(Web::input('email'));
         $id=Account::register(Web::input('nomeUsuario'),$email,Web::input('senha',false),Web::input('confirmacao',false));
-        try { Account::sendActivation($id,$email); } catch(\Throwable $e) { error_log($e->getMessage());throw new HttpError(503,'Conta criada, mas o envio falhou. Confira o SMTP e use Reenviar confirmação.'); }
+        try { Account::sendActivation($id,$email); } catch(\Throwable $e) { error_log($e->getMessage());throw new HttpError(503,'Conta criada, mas o envio falhou. Confira o envio de e-mail e use Reenviar confirmação.'); }
         return ['message'=>'Conta criada. Abra a mensagem no Mailtrap e confirme seu e-mail antes de entrar.'];
     }
     public function confirm(): array { Account::consume(Web::input('token'),'ativacao');return ['message'=>'E-mail confirmado. Você já pode entrar.']; }
     private function link(string $type): array {
         $this->limit('link-'.$type,5);$email=strtolower(Web::input('email'));
         if(strlen($email)>190 || !filter_var($email,FILTER_VALIDATE_EMAIL)) throw new HttpError(422,'Informe um e-mail válido.');
-        try { Account::sendLink($email,$type); } catch(\Throwable $e) { error_log($e->getMessage());throw new HttpError(503,'Não foi possível enviar ao Mailtrap. Confira a configuração SMTP e tente novamente.'); }
+        try { Account::sendLink($email,$type); } catch(\Throwable $e) { error_log($e->getMessage());throw new HttpError(503,'Não foi possível enviar ao Mailtrap. Confira a configuração de envio e tente novamente.'); }
         return ['message'=>'Se houver uma conta elegível, a mensagem estará no Mailtrap → My Sandbox.'];
     }
     public function resend(): array { return $this->link('ativacao'); }
