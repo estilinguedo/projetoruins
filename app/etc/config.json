@@ -24,8 +24,8 @@
     "host": "sandbox.smtp.mailtrap.io",
     "port": 2525,
     "encryption": "tls",
-    "user": "c9039188143fdf",
-    "password": "90b5fb38fc2f9a",
+    "user": "462531465682ed",
+    "password": "249372c4e6b00c",
     "from_email": "nao-responda@plataforma.test",
     "from_name": "Plataforma de Jogadores"
   },
