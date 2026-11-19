@@ -1,0 +1,13 @@
+Options -Indexes -MultiViews
+DirectoryIndex ate-agora-ta-sem-nome-final.html
+<IfModule mod_mime.c>
+    AddType application/wasm .wasm
+    AddType application/octet-stream .pck
+    AddType application/javascript .js
+</IfModule>
+<IfModule mod_headers.c>
+    # Substitui a politica herdada somente dentro de /jogo/.
+    Header unset Content-Security-Policy
+    Header always unset Content-Security-Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://projetob3.ifhost.gru.br; worker-src 'self' blob:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+</IfModule>

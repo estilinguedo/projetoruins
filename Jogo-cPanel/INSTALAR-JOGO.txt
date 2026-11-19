@@ -1,0 +1,23 @@
+﻿JOGO WEB NO CPANEL
+
+1. Extraia Jogo-cPanel.zip na raiz do projeto, onde ficam app, public e vendor.
+   O jogo deve ficar em public/jogo/ate-agora-ta-sem-nome-final.html, sem uma pasta jogao_dubom extra.
+2. Confirme que .htaccess foi enviado dentro de public/jogo (arquivo oculto).
+3. Abra https://projetob3.ifhost.gru.br/jogo/
+4. Se houver cache, use Ctrl+F5. O primeiro carregamento baixa cerca de 40 MB.
+5. Use o login do jogo para testar sua conta e a pontuacao.
+
+Nao precisa importar banco nem alterar o config.json. Este ZIP so adiciona o jogo.
+O dominio deve continuar apontando para public, como na instalacao atual.
+Todos os nove arquivos originais do ZIP foram preservados byte a byte, inclusive
+HTML, JavaScript, imagens, .pck e .wasm. Somente .htaccess foi acrescentado
+para configurar a hospedagem. Nenhuma logica do Godot foi alterada.
+API esperada: https://projetob3.ifhost.gru.br/api
+O jogo e a API no mesmo dominio nao precisam de liberacao CORS.
+Esta exportacao tem threads desativadas; nao precisa de isolamento COOP/COEP.
+O .htaccess local define MIME do WebAssembly, pagina inicial e politica de
+seguranca propria para o jogo, sem alterar a politica das paginas do site.
+
+Se uma nova exportacao mudar os nomes, substitua o conjunto completo de arquivos.
+O ZIP completo PlataformaJogadores-cPanel-Com-Jogo.zip inclui tambem o site
+com envio Mailtrap HTTPS ja configurado; preserve storage e o banco existentes.
